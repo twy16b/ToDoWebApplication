@@ -1,0 +1,10 @@
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\bin\Debug\netstandard2.0\Library.ToDo.deps.json
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\bin\Debug\netstandard2.0\Library.ToDo.dll
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\bin\Debug\netstandard2.0\Library.ToDo.pdb
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.AssemblyInfoInputs.cache
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.AssemblyInfo.cs
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.csproj.CoreCompileInputs.cache
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.dll
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.pdb
+C:\Users\tyzel\source\repos\ToDoWebApplication\Library.ToDo\Library.ToDo\obj\Debug\netstandard2.0\Library.ToDo.csproj.AssemblyReference.cache

@@ -1,0 +1,105 @@
+﻿<ContentDialog
+    x:Class="ToDoWeb.Dialogs.AppointmentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:ToDoWeb.Converters"
+    mc:Ignorable="d"
+    Title="Appointment"
+    PrimaryButtonText="Save"
+    SecondaryButtonText="Cancel"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick">
+
+    <ContentDialog.Resources>
+        <local:DateConverter x:Key="DateConverter"/>
+        <local:TimeConverter x:Key="TimeConverter"/>
+        <local:AttendeesConverter x:Key="AttendeesConverter"/>
+        <local:PriorityConverter x:Key="PriorityConverter"/>
+    </ContentDialog.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition MinHeight="80" MaxHeight="200"/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="250"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBox 
+            x:Name="textBoxName"
+            Grid.Row="0"
+            Margin="0,0,5,5"
+            Header="Name" 
+            Text="{x:Bind ApptContext.Name,  Mode=TwoWay}"/>
+
+        <TextBox 
+            x:Name="textBoxDescription"
+            Grid.Row="1" 
+            Margin="0,0,5,5"
+            Header="Description" 
+            TextWrapping="Wrap" 
+            AcceptsReturn="True"
+            Text="{x:Bind ApptContext.Description, Mode=TwoWay}"/>
+
+        <CalendarDatePicker 
+            x:Name="datePickStart"
+            Grid.Row="2"
+            Margin="0,0,0,5"
+            Header="Start"
+            Date="{x:Bind ApptContext.Start, Mode=OneTime, Converter={StaticResource DateConverter}}"
+            DateChanged="datePick_DateChanged"/>
+
+        <TimePicker 
+            x:Name="timePickStart"
+            Grid.Row="3"
+            Margin="0,0,5,0"
+            Time="{x:Bind ApptContext.Start, Mode=OneTime, Converter={StaticResource TimeConverter}}"
+            TimeChanged="timePick_TimeChanged"/>
+
+        <ComboBox
+            x:Name="comboBoxPriority"
+            Header="Priority"
+            Grid.Column="1"
+            Grid.Row="0" 
+            Margin="0,0,5,0"
+            ItemsSource="{x:Bind PriorityStrings, Mode=OneTime}"
+            SelectedIndex="{x:Bind ApptContext.Priority, Mode=TwoWay}">
+        </ComboBox>
+
+        <TextBox 
+            x:Name="textBoxAttendees"
+            Grid.Column="1" 
+            Grid.Row="1"
+            Margin="0,0,5,5"
+            HorizontalAlignment="Stretch"
+            Header="Attendees" 
+            TextWrapping="Wrap" 
+            AcceptsReturn="True"
+            Text="{x:Bind ApptContext.Attendees, Mode=TwoWay, Converter={StaticResource AttendeesConverter}}"/>
+
+        <CalendarDatePicker 
+            x:Name="datePickStop"
+            Grid.Column="1"
+            Grid.Row="2"
+            Margin="0,0,0,5"
+            Header="Stop"
+            Date="{x:Bind ApptContext.Stop, Mode=OneTime, Converter={StaticResource DateConverter}}"
+            DateChanged="datePick_DateChanged"/>
+
+        <TimePicker 
+            x:Name="timePickStop"
+            Grid.Column="1"
+            Grid.Row="3"
+            Time="{x:Bind ApptContext.Stop, Mode=OneTime, Converter={StaticResource TimeConverter}}"
+            TimeChanged="timePick_TimeChanged"/>
+
+
+
+    </Grid>
+</ContentDialog>
